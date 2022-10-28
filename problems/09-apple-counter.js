@@ -34,7 +34,7 @@ function appleCounter(appleObj) {
   let count = 0
   for (key in appleObj) {
     let el = key.toLowerCase()
-    console.log(el)
+    // console.log(el)
     if (el.includes(word)) {
       count++
     }
