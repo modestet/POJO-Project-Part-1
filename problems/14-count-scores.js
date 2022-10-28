@@ -15,6 +15,8 @@ let ppl = [{name: "Anthony", score: 10},
 console.log(countScores(ppl)); //=> { Anthony: 2, Fred: 10, Winnie: 12 }
 
 Example 2:
+***********************************************************************/
+
 let peeps = [
   {name: "Anthony", score: 2},
   {name: "Winnie", score: 2},
@@ -25,10 +27,23 @@ let peeps = [
   {name: "Winnie", score: 2}
 ];
 console.log(countScores(peeps)); //=> { Anthony: 4, Fred: 4, Winnie: 6 }
-***********************************************************************/
 
 function countScores(people) {
   // Your code here
+  let totalScores = {};
+  for (let i = 0; i < people.length; i++) {
+    let object = people[i];
+    // console.log(object);
+    let objName = object["name"];
+    let objScore = object["score"];
+    if(totalScores[objName] === undefined) {
+      totalScores[objName] = objScore;
+    } else {
+      totalScores[objName] += objScore;
+    }
+  }
+
+  return totalScores;
 }
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
